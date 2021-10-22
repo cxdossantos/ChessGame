@@ -1,5 +1,7 @@
 ﻿using System;
 using tabuleiro;
+using xadrez;
+
 namespace ChessGame
 {
     class Tela
@@ -14,7 +16,7 @@ namespace ChessGame
                 {
                     if (tab.peca(i, j) == null)
                     {
-                        Console.Write("- ");
+                        Console.Write(" - ");
                     }
                     else
                     {
@@ -24,7 +26,18 @@ namespace ChessGame
                 }
                 Console.WriteLine("");
             }
-            Console.Write("  a b c d e f g h");
+            Console.Write("   a  b  c  d  e  f  g  h");
+            Console.WriteLine("");
+        }
+
+        public static PosicaoXadrez lerPosicaoXadrez()
+        {
+            string s = Console.ReadLine();
+            char coluna = s[0];
+            int linha = int.Parse(s[1] + "");
+
+            return new PosicaoXadrez(coluna, linha);
+
         }
 
         public static void imprimirPeca(Peca peca)

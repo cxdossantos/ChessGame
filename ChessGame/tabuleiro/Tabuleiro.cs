@@ -37,7 +37,8 @@ namespace tabuleiro
 
         public void colocarPeca(Peca p, Posicao pos)
         {
-            if (existePeca(pos))
+            Peca aux = peca(pos);
+            if (existePeca(pos) && p.cor == aux.cor)
             {
                 throw new TabuleiroException("Já existe uma peça na mesma posição!!!");
             }
